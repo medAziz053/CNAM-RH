@@ -11,10 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="app.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div ng-view></div>
+    <div class="AppContainer">
+      <div class="AppNavbar"></div>
+      <div class="View" ng-view></div>
+    </div>
 
     <!-- In production use:
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -22,10 +26,10 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
-    <script src="view1/view1.js"></script>
+    <script src="personel/personel.js"></script>
     <script src="view2/view2.js"></script>
-    <script src="view2/view2.js"></script>
-    <script src="view2/view2.js"></script>
+    <script src="register/register.js"></script>
+    <script src="login/login.js"></script>
 
     <script src="components/version/version.js"></script>
     <script src="components/version/version-directive.js"></script>

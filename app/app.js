@@ -4,17 +4,17 @@
 angular.module('myApp', [
   'ngRoute',
   'ngCookies',
-  'myApp.view1',
+  'myApp.personel',
   'myApp.view2',
   'myApp.version'
 ]).
 	config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-		$locationProvider.hashPrefix('CNAM-RH');
+		$locationProvider.hashPrefix('CNAM-R');
 
 		$routeProvider
-		          .when('/', {
-		              controller: 'view1Controller',
-		              templateUrl: 'view1/view1.html',
+		     	  .when('/', {
+		              controller: 'personelController',
+		              templateUrl: 'personel/personel.html',
 		              controllerAs: 'vm'
 		          })
 
@@ -42,10 +42,10 @@ angular.module('myApp', [
 
 	    $rootScope.$on('$locationChangeStart', function (event, next, current) {
 	        // redirect to login page if not logged in and trying to access a restricted page
-	        var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+	        /*var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
 	        var loggedIn = $rootScope.globals.currentUser;
 	        if (restrictedPage && !loggedIn) {
 	            $location.path('/login');
-	        }
+	        }*/
 	    });
 	}]);

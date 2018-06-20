@@ -23,3 +23,32 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.View {
+	padding: 10px 0;
+}
+
+.Personel-title {
+	border-bottom: 1px solid black;
+}
+
+.Personel-titleLabel {
+	padding: 0 0 15px 30px;
+}
+
+.Personel-addPersonel {
+	padding: 15px 0 15px 12px;
+}
+
+body {
+	background-color: rgb(229, 231, 234);
+	padding: 0 20px
+}
+
+.AppContainer {
+	background-color: rgb(255, 255, 255);
+}
+
+.Personel-table {
+	padding: 0 30px;
+}

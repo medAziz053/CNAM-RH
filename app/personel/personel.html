@@ -1,0 +1,49 @@
+<div>
+	<div class="row">
+		<div class="Personel-title">
+			<div class="Personel-titleLabel">LISTE PERSONEL</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="Personel-addPersonel">
+			<button type="button" class="btn btn-success">Ajouter Personel</button>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="Personel-table">
+			<table class="table table-bordered">
+				<thead>
+				    <tr>
+				      <th scope="col"></th>
+				      <th scope="col">Nom & Prénom</th>
+				      <th scope="col">Date & Lieu de naissance</th>
+				      <th scope="col">Matricule</th>
+				      <th scope="col">Situation Familiale</th>
+				      <th scope="col">Grade</th>
+				      <th scope="col">Recruté(e) le</th>
+				      <th scope="col">Nbr Enfant</th>
+				      <th scope="col">Position</th>
+				      <th scope="col">Actions</th>
+				    </tr>
+				</thead>
+				<tbody>
+				    <tr ng-repeat="pers in personel">
+				      <th scope="row">{{ $index + 1 }}</th>
+				      <td>{{pers.name}}</td>
+				      <td>{{pers.birth}}</td>
+				      <td>{{pers.registrationNumber}}</td>
+				      <td>{{pers.familySituation}}</td>
+				      <td>{{pers.grade}}</td>
+				      <td>{{pers.recruitementDate}}</td>
+				      <td>{{pers.childenCount}}</td>
+				      <td>{{pers.position}}</td>
+				      <td>
+				      	<button type="button" class="btn btn-success">Modifier</button>
+				      	<button type="button" class="btn btn-danger">Supprimer</button>
+				      </td>
+				    </tr>
+	  			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
