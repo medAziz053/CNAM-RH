@@ -5,15 +5,17 @@ angular.module('myApp', [
   'ngRoute',
   'ngCookies',
   'myApp.personel',
+  'myApp.avances',
+  'myApp.pilotage',
   'myApp.view2',
   'myApp.version'
 ]).
 	config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-		$locationProvider.hashPrefix('CNAM-R');
+		$locationProvider.hashPrefix('!');
 
 		$routeProvider
 		     	  .when('/', {
-		              controller: 'personelController',
+		              controller: 'PersonelCtrl',
 		              templateUrl: 'personel/personel.html',
 		              controllerAs: 'vm'
 		          })

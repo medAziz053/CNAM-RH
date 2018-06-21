@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="Avances-addAvance">
+    <button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-plus"></span> Ajouter une demande
+    </button>
+  </div>
+</div>
+<div class="row" style="padding-right: 20px">
+  <div class=".col-md-4 pull-right">
+    <div class=".Avances-search">
+      <span>Search</span>
+      <input type="text" name="" placeholder="Search">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="Avances-table">
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Nom & Prénom</th>
+          <th scope="col">Date & Lieu de naissance</th>
+          <th scope="col">Matricule</th>
+          <th scope="col">Situation Familiale</th>
+          <th scope="col">Grade</th>
+          <th scope="col">Recruté(e) le</th>
+          <th scope="col">Nbr Enfant</th>
+          <th scope="col">Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="av in avances" ng-class="{'danger': av.status === 'refused', 'success': av.status === 'accepted', 'info': av.status === 'in progress' }">
+          <th scope="row">{{ $index + 1 }}</th>
+          <td>{{av.name}}</td>
+          <td>{{av.birth}}</td>
+          <td>{{av.registrationNumber}}</td>
+          <td>{{av.familySituation}}</td>
+          <td>{{av.grade}}</td>
+          <td>{{av.recruitementDate}}</td>
+          <td>{{av.childenCount}}</td>
+          <td>{{av.position}}</td>
+        </tr>
+      </tbody>
+    </table>  
+  </div>
+  
+</div>
+<div class="row">
+  <div class="Avances-pagination">
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

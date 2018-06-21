@@ -25,30 +25,60 @@
 }
 
 .View {
-	padding: 10px 0;
+	padding: 0 10px;
+	margin: 0 20px;
+	background-color: rgb(255, 255, 255);
 }
 
 .Personel-title {
+	padding: 10px 0 10px 30px;
 	border-bottom: 1px solid black;
 }
 
 .Personel-titleLabel {
-	padding: 0 0 15px 30px;
 }
 
-.Personel-addPersonel {
-	padding: 15px 0 15px 12px;
+.Personel-addPersonel, .Avances-addAvance  {
+	padding: 15px 0 15px 30px;
+}
+
+.Avances-search input{
+	padding: 0 10px;
+}
+
+.Avances-pagination {
+	padding-left: 30px;
 }
 
 body {
 	background-color: rgb(229, 231, 234);
-	padding: 0 20px
 }
 
 .AppContainer {
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(229, 231, 234);
 }
 
-.Personel-table {
+.Personel-table, .Avances-table {
 	padding: 0 30px;
+}
+
+#AppNavbar {
+	background-color: rgb(20, 168, 128);
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: rgb(255, 255, 255);
+}
+
+.Pilotage-labels {
+	padding: 15px 0;
+	float: none;
+  margin: 0 auto;
+  display: flex;    
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Pilotage-labels div {
+	margin: 0px 10px;
 }

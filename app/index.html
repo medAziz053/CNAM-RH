@@ -16,7 +16,34 @@
   </head>
   <body>
     <div class="AppContainer">
-      <div class="AppNavbar"></div>
+      <nav id="AppNavbar" class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="#!/avances">AVANCES SUR SALAIRE <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">TABLEAU AMORTISSEMENT <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">REMBOURSEMENTS <span class="sr-only">(current)</span></a></li>
+              <li><a href="#!/pilotage">PILOTAGE <span class="sr-only">(current)</span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <button type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-log-out"></span> Log out
+                </button>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a>français</a></li>
+                  <li><a>anglais</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
       <div class="View" ng-view></div>
     </div>
 
@@ -27,6 +54,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="personel/personel.js"></script>
+    <script src="avances/avances.js"></script>
+    <script src="pilotage/pilotage.js"></script>
     <script src="view2/view2.js"></script>
     <script src="register/register.js"></script>
     <script src="login/login.js"></script>
@@ -35,6 +64,10 @@
     <script src="components/version/version-directive.js"></script>
     <script src="components/version/interpolate-filter.js"></script>
     <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+
+    <!--chart.js-->
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
       
     <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app.js"></script>
     <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/authentication.service.js"></script>
