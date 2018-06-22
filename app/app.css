@@ -102,3 +102,7 @@ body {
 .Amortissement-secondLine input {
 	margin-right: 20px;
 }
+
+.AjoutAvance-title, .AjoutAvance-form {
+	padding: 10px 500px 10px 30px;
+}

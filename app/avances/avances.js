@@ -7,6 +7,10 @@ angular.module('myApp.avances', ['ngRoute'])
     templateUrl: 'avances/avances.html',
     controller: 'AvancesCtrl'
   });
+  $routeProvider.when('/avances/add', {
+    templateUrl: 'avances/ajoutAvance.html',
+    controller: 'AjoutAvanceCtrl'
+  });
 }])
 
 .controller('AvancesCtrl', function($scope) {
@@ -54,4 +58,7 @@ angular.module('myApp.avances', ['ngRoute'])
 			      		'position': 'Actif',
 			      		'status': 'in progress'
 			      	  }];
+})
+.controller('AjoutAvanceCtrl', function($scope) {
+
 });
