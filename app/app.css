@@ -58,7 +58,7 @@ body {
 	background-color: rgb(229, 231, 234);
 }
 
-.Personel-table, .Avances-table {
+.Personel-table, .Avances-table, .Amortissement-table {
 	padding: 0 30px;
 }
 
@@ -81,4 +81,24 @@ body {
 
 .Pilotage-labels div {
 	margin: 0px 10px;
+}
+
+.Amortissement-firstLine, .Amortissement-secondLine {
+	padding: 15px 15px;
+}
+
+.Amortissement-firstLine span {
+	padding-right: 30px;
+}
+
+.Amortissement-firstLine input {
+	margin-right: 20px;
+}
+
+.Amortissement-secondLine span {
+	padding-right: 37px;
+}
+
+.Amortissement-secondLine input {
+	margin-right: 20px;
 }

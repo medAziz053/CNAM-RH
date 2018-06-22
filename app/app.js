@@ -7,7 +7,7 @@ angular.module('myApp', [
   'myApp.personel',
   'myApp.avances',
   'myApp.pilotage',
-  'myApp.view2',
+  'myApp.amortissement',
   'myApp.version'
 ]).
 	config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

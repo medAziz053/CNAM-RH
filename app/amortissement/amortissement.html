@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="Amortissement-firstLine">
+		<span>Matricule</span>
+		<input type="text" name="matricule">
+		<button type="button" class="btn btn-success">Chercher</button>
+	</div>
+</div>
+<div class="row">
+	<div class="Amortissement-secondLine">
+		<span>Montant</span>
+		<input type="text" name="montant">
+		<span>Echéance</span>
+		<input type="text" name="echeance">
+	</div>
+</div>
+<div class="row">
+	<div class="Amortissement-table">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td>Année</td>
+					<td>Mois</td>
+					<td>Ordre du mois</td>
+					<td>Période</td>
+					<td>Salaire brut</td>
+					<td>Salaire net</td>
+					<td>Interet</td>
+					<td>Prélevements</td>
+					<td>Total</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="remb in remboursements">
+					<td>remb.annee</td>
+					<td>remb.mois</td>
+					<td>remb.ordreMois</td>
+					<td>remb.periode</td>
+					<td>remb.salaireBrut</td>
+					<td>remb.salaireNet</td>
+					<td>remb.interet</td>
+					<td>remb.prelevements</td>
+					<td>remb.total</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
