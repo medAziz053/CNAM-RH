@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'ngCookies',
+  'myApp.login',
   'myApp.personel',
   'myApp.avances',
   'myApp.pilotage',
@@ -23,12 +24,6 @@ angular.module('myApp', [
 		          .when('/login', {
 		              controller: 'LoginController',
 		              templateUrl: 'login/login.html',
-		              controllerAs: 'vm'
-		          })
-
-		          .when('/register', {
-		              controller: 'RegisterController',
-		              templateUrl: 'register/register.html',
 		              controllerAs: 'vm'
 		          })
 
