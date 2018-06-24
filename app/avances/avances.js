@@ -24,14 +24,16 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 					&& $rootScope.globals.currentUser.type === "admin";
 
 	$scope.accepter = (id) => {
-		$http.post('http://localhost:8080/avanceservice/avances', {'id': id, 'state': 'acceptée'}).
+		var etat = "acceptée"
+		$http.get('http://localhost:8080/avanceservice/avances/'+id+'/'+etat).
 		then(function(response) {
 			$state.reload();
 		});		
 	}
 
 	$scope.refuser = (id) => {
-		$http.post('http://localhost:8080/avanceservice/avances', {'id': id, 'state': 'refusée'}).
+		var etat = "refusée"
+		$http.get('http://localhost:8080/avanceservice/avances/'+id+'/'+etat).
 		then(function(response) {
 			$state.reload();
 		});	
