@@ -19,7 +19,7 @@ angular.module('myApp.pilotage', ['ngRoute', 'chart.js'])
 
 	$scope.colors = [ '#EAF1F5', '#F8F8F8', '#FDDADB'];
 
-	$http.get('http://localost:8080/pilotageservice/pilotage')
+	$http.get('http://localhost:8080/avanceservice/avances/pilotage')
 		.then(function(response) {
 			$scope.data = response.data;
 		});
