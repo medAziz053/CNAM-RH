@@ -54,11 +54,11 @@ angular.module('myApp', [
 		controller: NavbarController
 	});
 
-	function NavbarController ($rootScope, $location) {
-		var ctrl = this;
-		ctrl.currentUser = $rootScope.globals.currentUser || null; 
-		ctrl.isAdmin = $rootScope.globals && $rootScope.globals.currentUser && $rootScope.globals.currentUser.type === 'admin';
-		ctrl.logout = () => {
+	function NavbarController ($rootScope, $location,$scope) {
+		$scope.ctrl = this;
+		$scope.ctrl.currentUser = $rootScope.globals.currentUser || null; 
+		$scope.ctrl.isAdmin = $rootScope.globals && $rootScope.globals.currentUser && $rootScope.globals.currentUser.type === 'admin';
+		$scope.ctrl.logout = () => {
 			$location.path('/login');
 		}
 	}

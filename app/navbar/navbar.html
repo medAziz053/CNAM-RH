@@ -1,18 +1,18 @@
-<nav id="AppNavbar" class="navbar navbar-default"  ng-if="currentUser">
+<nav id="AppNavbar" class="navbar navbar-default" >
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li ng-if="isAdmin"><a href="#!/personel">Home<span class="sr-only">(current)</span></a></li>
-        <li ng-if="!isAdmin"><a href="#!/profile">Home<span class="sr-only">(current)</span></a></li>
+        <li ="ctrl.isAdmin == true"><a href="#!/personel">HOME<span class="sr-only">(current)</span></a></li>
+        <li ng-if="ctrl.isAdmin == false"><a href="#!/profile">HOME<span class="sr-only">(current)</span></a></li>
         
         <li><a href="#!/avances">AVANCES SUR SALAIRE <span class="sr-only">(current)</span></a></li>
         
-        <li ng-if="isAdmin"><a href="#!/amortissement">TABLEAU AMORTISSEMENT <span class="sr-only">(current)</span></a></li>
+        <li ng-if="ctrl.isAdmin == true"><a href="#!/amortissement">TABLEAU AMORTISSEMENT <span class="sr-only">(current)</span></a></li>
         
-        <li ng-if="isAdmin"><a href="#">REMBOURSEMENTS <span class="sr-only">(current)</span></a></li>
+        <li ng-if="ctrl.isAdmin == true"><a href="#">REMBOURSEMENTS <span class="sr-only">(current)</span></a></li>
         
-        <li ng-if="isAdmin"><a href="#!/pilotage">PILOTAGE <span class="sr-only">(current)</span></a></li>
+        <li ng-if="ctrl.isAdmin == true"><a href="#!/pilotage">PILOTAGE <span class="sr-only">(current)</span></a></li>
       
       </ul>
       <ul class="nav navbar-nav navbar-right">
