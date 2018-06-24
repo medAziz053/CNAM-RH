@@ -28,6 +28,7 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 					if (currentValue.matricule === $scope.personelMatricule) {
 						accumulator.concat(currentValue);
 					}
+					return accumulator;
 				}
 				$scope.avances = $scope.avances.reduce(reducer, []);
 			}
