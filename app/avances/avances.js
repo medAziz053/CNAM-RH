@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.avances', ['ngRoute'])
+angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/avances', {
@@ -13,11 +13,30 @@ angular.module('myApp.avances', ['ngRoute'])
   });
 }])
 
-.controller('AvancesCtrl', function($scope, $http) {
+.controller('AvancesCtrl', function($scope, $rootScope, $http, $state) {
 	$http.get('http://localhost:8080/avanceservice/avances').
 		then(function(response) {
 			$scope.avances = response.data;
 		});
+
+	$scope.isAdmin = $rootScope.globals 
+					&& $rootScope.globals.currentUser 
+					&& $rootScope.globals.currentUser.type === "admin";
+
+	$scope.accepter = (id) => {
+		$http.post('http://localhost:8080/avanceservice/avances', {'id': id, 'state': 'acceptée'}).
+		then(function(response) {
+			$state.reload();
+		});		
+	}
+
+	$scope.refuser = (id) => {
+		$http.post('http://localhost:8080/avanceservice/avances', {'id': id, 'state': 'refusée'}).
+		then(function(response) {
+			$state.reload();
+		});	
+	}
+
 })
 .controller('AjoutAvanceCtrl', function($scope,$http,$location) {
 	$scope.demande = {};
