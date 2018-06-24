@@ -9,7 +9,10 @@
 
 		  <div class="form-group">
 		    <label for="matricule">Matricule:</label>
-		    <input type="text" class="form-control" id="matricule" ng-model="demande.matricule">
+		    <input type="text" class="form-control" id="matricule" ng-model="demande.matricule" 
+		    ng-if="!demande.matricule">
+		    <input type="text" class="form-control" id="matricule" ng-model="demande.matricule"
+		    ng-if="demande.matricule" ng-disabled="true">
 		  </div>
 
 		  <div class="form-group">
