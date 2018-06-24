@@ -30,7 +30,7 @@ angular.module('myApp.amortissement', ['ngRoute'])
 		var result = null;
 	}
 
-	$scope.amortissements = {};
+	$scope.amortissements = getAmortissements();
 
 	function getAmortissements () {
 		$http.get('http://localhost:8080/amortissementservice/amortissements').then(function(response) {

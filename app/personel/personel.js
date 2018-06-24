@@ -23,7 +23,7 @@ angular.module('myApp.personel', ['ngRoute', 'ui.router'])
 
 	$http.get('http://localhost:8080/agentservice/agents').
         then(function(response) {
-        	$scope.personel = response;
+        	$scope.personel = response.data;
         });
 
 	$scope.addPersonel = () => {
