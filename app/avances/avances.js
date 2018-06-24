@@ -26,8 +26,9 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 			if(personelMatricule) {
 				const reducer = (accumulator, currentValue) => {
 					if (currentValue.matricule === personelMatricule) {
-						accumulator.concat(currentValue);
+						accumulator.push(currentValue);
 					}
+					return accumulator;
 				}
 				$scope.avances = $scope.avances.reduce(reducer, []);
 			}
