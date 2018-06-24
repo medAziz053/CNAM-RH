@@ -43,7 +43,7 @@ angular.module('myApp.login', [])
                     currentUser: {
                         matricule: matricule,
                         username: username,
-                        type: admin,
+                        type: type,
                         authdata: authdata
                     }
                 };
