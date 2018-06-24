@@ -28,6 +28,7 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 		$http.get('http://localhost:8080/avanceservice/avances/'+id+'/'+etat).
 		then(function(response) {
 			$state.reload();
+			$location.path('/avances');
 		});		
 	}
 
@@ -36,6 +37,7 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 		$http.get('http://localhost:8080/avanceservice/avances/'+id+'/'+etat).
 		then(function(response) {
 			$state.reload();
+			$location.path('/avances');
 		});	
 	}
 

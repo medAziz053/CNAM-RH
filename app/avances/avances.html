@@ -41,7 +41,7 @@
           <td>{{av.mnt_mensuel}}</td>
           <td>{{av.objet}}</td>
           <td>{{av.etat}}</td>
-          <td ng-if="isAdmin">
+          <td ng-if="isAdmin == true">
             <button type="button" class="btn btn-success" ng-if="av.etat ==='en attente'"
             ng-confirm-click="Vous êtes sur d\'accepter cette demande?" confirmed-click="accepter(av.id)">Accepter</button>
             <button type="button" class="btn btn-danger" ng-if="av.etat ==='en attente'"
