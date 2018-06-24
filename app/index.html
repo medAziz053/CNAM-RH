@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="AppContainer">
-      <navbar></navbar>
+      <navbar ng-if="$rootScope.globals.currentUser"></navbar>
       <div class="View" ng-view></div>
     </div>
 

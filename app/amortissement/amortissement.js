@@ -10,7 +10,7 @@ angular.module('myApp.amortissement', ['ngRoute'])
 }])
 
 .controller('AmortissementCtrl', function($scope, $http) {
-	var months = ['', '', '', '', '', '', '', '', '', '', '', '', '', '',];
+	var months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 	$scope.chercher = () => {
 		var date1 = $scope.echeance.split('-')[0];
 		var date2 = $scope.echeance.split('-')[1];
@@ -22,6 +22,9 @@ angular.module('myApp.amortissement', ['ngRoute'])
 	function getAmortissements () {
 		$http.get('http://localhost:8080/amortissementservice/amortissements').then(function(response) {
         	$scope.amortissements = response;
+        	$scope.amortissements.forEach((am) => {
+        		am.moisString = months[am.mois + 1];
+        	});
         });
 	}
 });
