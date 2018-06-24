@@ -2,11 +2,25 @@
 
 angular.module('myApp.pilotage', ['ngRoute', 'chart.js'])
 
-.config(['$routeProvider', function($routeProvider, ChartJsProvider) {
+.config(['$routeProvider', 'ChartJsProvider', function($routeProvider, ChartJsProvider) {
   $routeProvider.when('/pilotage', {
     templateUrl: 'pilotage/pilotage.html',
     controller: 'PilotageCtrl'
   });
+    ChartJsProvider.setOptions({scales: {
+                					yAxes: [
+										{
+										id: 'first-y-axis',
+										type: 'logarithmic'
+										}
+                					],
+									xAxes: [
+										{
+											id: 'first-x-axis',
+											type: 'linear'
+										}
+									]
+    								}});
 }])
 
 .controller('PilotageCtrl', function($scope,$http) {
