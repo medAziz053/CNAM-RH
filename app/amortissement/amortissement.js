@@ -22,7 +22,7 @@ angular.module('myApp.amortissement', ['ngRoute'])
 		$http.post('http://localhost:8080/amortissementservice/amortissements/filtrage', {
 
 		}).then(function(response) {
-        	$scope.amortissements = response;
+        	$scope.amortissements = response.data;
         	$scope.amortissements.forEach((am) => {
         		am.moisString = months[am.mois + 1];
         	});
@@ -34,7 +34,7 @@ angular.module('myApp.amortissement', ['ngRoute'])
 
 	function getAmortissements () {
 		$http.get('http://localhost:8080/amortissementservice/amortissements').then(function(response) {
-        	$scope.amortissements = response;
+        	$scope.amortissements = response.data;
         	$scope.amortissements.forEach((am) => {
         		am.moisString = months[am.mois + 1];
         	});
