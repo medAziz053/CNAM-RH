@@ -6,7 +6,7 @@
 	</div>
 	<div class="row">
 		<div class="Personel-addPersonel">
-			<button type="button" class="btn btn-success">Ajouter Personel</button>	
+			<button type="button" class="btn btn-success" ng-click="addPersonel()">Ajouter Personel</button>	
 		</div>
 	</div>
 	<div class="row">
@@ -38,8 +38,8 @@
 				      <td>{{pers.childenCount}}</td>
 				      <td>{{pers.position}}</td>
 				      <td>
-				      	<button type="button" class="btn btn-success">Modifier</button>
-				      	<button type="button" class="btn btn-danger">Supprimer</button>
+				      	<button type="button" class="btn btn-success" ng-click="editPersonel(pers)">Modifier</button>
+				      	<button type="button" class="btn btn-danger" ng-confirm-click="Are you sure to delete this employee?" confirmed-click="removePersonel(pers.id)">Supprimer</button>
 				      </td>
 				    </tr>
 	  			</tbody>
