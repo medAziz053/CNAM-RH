@@ -17,7 +17,7 @@ angular.module('myApp.personel', ['ngRoute', 'ui.router'])
   })
 }])
 
-.controller('PersonelCtrl', function($scope, $rootScope, $location, $state) {
+.controller('PersonelCtrl', function($scope, $rootScope, $location, $state, $http) {
 	
 	$scope.personel = null;
 
@@ -61,7 +61,7 @@ angular.module('myApp.personel', ['ngRoute', 'ui.router'])
             }
         };
 }])
-.controller('editPersonelController', function($scope, $rootScope, $location) {
+.controller('editPersonelController', function($scope, $rootScope, $location, $http) {
 	$scope.personel = $rootScope.personelToEdit;
 	$rootScope.personelToEdit = null;
 	$scope.cancel = function () {
@@ -74,7 +74,7 @@ angular.module('myApp.personel', ['ngRoute', 'ui.router'])
         });
 	}
 })
-.controller('addPersonelController', function($scope, $location) {
+.controller('addPersonelController', function($scope, $location, $http) {
 	$scope.cancel = function () {
 		$location.path('/personel');
 	}
