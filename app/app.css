@@ -149,8 +149,8 @@ body {
 }
 
 .Profile-Container {
-	padding: 10px 20px;1
-	width: 600px;
+	padding: 30px 20px;
+	width: 800px;
 	margin: auto;
 	border: 1px solid black;
 	border-radius: 15px;
@@ -158,6 +158,6 @@ body {
 }
 
 .Profile-Container h1 {
-	text-align: center;
+	
 }
 
