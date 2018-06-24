@@ -19,20 +19,17 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 					&& $rootScope.globals.currentUser 
 					&& $rootScope.globals.currentUser.type === "admin";
 	$scope.personelMatricule = ($scope.isAdmin) ? null : $rootScope.globals.currentUser.matricule; 
-
+	if($scope.isAdmin){
 	$http.get('http://localhost:8080/avanceservice/avances').
 		then(function(response) {
 			$scope.avances = response.data;
-			if($scope.personelMatricule) {
-				const reducer = (accumulator, currentValue) => {
-					if (currentValue.matricule === $scope.personelMatricule) {
-						accumulator.concat(currentValue);
-					}
-					return accumulator;
-				}
-				$scope.avances = $scope.avances.reduce(reducer, []);
-			}
-		});
+			})	
+	}else{
+		$http.get('http://localhost:8080/avanceservice/avances/'+$rootScope.globals.currentUser.matricule).
+		then(function(response) {
+			$scope.avances = response.data;
+			})	
+	}
 
 	$scope.accepter = (id) => {
 		var etat = "acceptée"
