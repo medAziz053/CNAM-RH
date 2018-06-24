@@ -39,6 +39,7 @@ angular.module('myApp', [
 	    }
 
 	    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+	    	$rootScope.globals = $cookieStore.get('globals') || {};
 	        // redirect to login page if not logged in and trying to access a restricted page
 	        var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
 	        var loggedIn = $rootScope.globals.currentUser;
