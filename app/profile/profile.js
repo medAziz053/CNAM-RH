@@ -10,17 +10,8 @@ angular.module('myApp.profile', [])
 		          });
 		}])
         .controller('ProfileController', function($scope) {
-        	$scope.profile = 
-        	{
-						'id': 1,
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			     		'birthPlace': 'Tunis',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif'
-			};
+        	$http.get('http://localhost:8080/agentservice/agents/'+$rootScope.globals.currentUser.matricule).
+        		then(function(response) {
+        			$scope.profile = response;
+        			});
         });

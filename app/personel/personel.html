@@ -29,13 +29,13 @@
 				<tbody>
 				    <tr ng-repeat="pers in personel">
 				      <th scope="row">{{ $index + 1 }}</th>
-				      <td>{{pers.name}}</td>
-				      <td>{{pers.birth}}</td>
-				      <td>{{pers.registrationNumber}}</td>
-				      <td>{{pers.familySituation}}</td>
-				      <td>{{pers.grade}}</td>
-				      <td>{{pers.recruitementDate}}</td>
-				      <td>{{pers.childenCount}}</td>
+				      <td>{{pers.nom}} {{pers.prenom}}</td>
+				      <td>{{pers.datnais}} - {{lieunais}}</td>
+				      <td>{{pers.matricule}}</td>
+				      <td>{{pers.situation}}</td>
+				      <td>{{pers.fonction}}</td>
+				      <td>{{pers.recrutement}}</td>
+				      <td>{{pers.nbr_enfants}}</td>
 				      <td>{{pers.position}}</td>
 				      <td>
 				      	<button type="button" class="btn btn-success" ng-click="editPersonel(pers)">Modifier</button>

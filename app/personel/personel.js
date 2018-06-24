@@ -17,58 +17,28 @@ angular.module('myApp.personel', ['ngRoute'])
   })
 }])
 
-.controller('PersonelCtrl', function($scope, $rootScope, $location) {
-	$scope.personel = [{
-						'id': 1,
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif'
-			      	  },
-			      	  {
-			      	  	'id': 2,
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif'
-			      	  },
-			      	  {
-			      	  	'id': 3,
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif'
-			      	  },
-			      	  {
-			      	  	'id': 4,
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif'
-			      	  }];
+.controller('PersonelCtrl', function($scope, $rootScope, $location, $state) {
+	
+	$scope.personel = null;
+
+	$http.get('http://localhost:8080/agentservice/agents').
+        then(function(response) {
+        	$scope.personel = response;
+        });
 
 	$scope.addPersonel = () => {
+		$http.post('http://localhost:8080/agentservice/agents/create',).
+        then(function(response) {
+        	$state.reload();
+        });
 		$location.path('/personel/add');
 	}
 
 	$scope.removePersonel = function(id) {
-		console.log('remove');
+		$http.delete('http://localhost:8080/agentservice/agents/delete/'+ id).
+        then(function(response) {
+        	$state.reload();
+        });
 	}
 
 	$scope.editPersonel = function(personel) {
@@ -98,8 +68,10 @@ angular.module('myApp.personel', ['ngRoute'])
 		$location.path('/personel');
 	}
 	$scope.save = () => {
-		//update
-		$location.path('/personel');
+		$http.post('http://localhost:8080/agentservice/agents/create', $scope.personel).
+        then(function(response) {
+			$location.path('/personel');
+        });
 	}
 })
 .controller('addPersonelController', function($scope, $location) {
@@ -107,7 +79,9 @@ angular.module('myApp.personel', ['ngRoute'])
 		$location.path('/personel');
 	}
 	$scope.save = () => {
-		//update
-		$location.path('/personel');
+		$http.post('http://localhost:8080/agentservice/agents/create', $scope.personel).
+        then(function(response) {
+			$location.path('/personel');
+        });
 	}	
 });

@@ -10,6 +10,12 @@ angular.module('myApp.amortissement', ['ngRoute'])
 }])
 
 .controller('AmortissementCtrl', function($scope) {
+	$scope.chercher = () => {
+		var date1 = $scope.echeance.split('-')[0];
+		var date2 = $scope.echeance.split('-')[1];
+		var result = null;
+	}
+
 	$scope.amortissements = [{
 						'name': 'Bouhammi Sami',
 			     		'birth': '29/01/1990',

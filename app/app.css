@@ -116,6 +116,7 @@ body {
 }
 
 .Amortissement-firstLine, .Amortissement-secondLine {
+	display: inline-flex;
 	padding: 15px 15px;
 }
 
@@ -131,6 +132,14 @@ body {
 	padding-right: 37px;
 }
 
+.Amortissement-secondLine .input-group.date {
+	width: 180px;
+}
+
+.Amortissement-secondLine .glyphicon.glyphicon-th {
+	padding-right: 0;
+}
+
 .Amortissement-secondLine input {
 	margin-right: 20px;
 }
@@ -140,7 +149,7 @@ body {
 }
 
 .Profile-Container {
-	padding: 10px 20px;
+	padding: 10px 20px;1
 	width: 600px;
 	margin: auto;
 	border: 1px solid black;
@@ -151,3 +160,4 @@ body {
 .Profile-Container h1 {
 	text-align: center;
 }
+

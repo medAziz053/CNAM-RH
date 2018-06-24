@@ -14,33 +14,34 @@ angular.module('myApp.login', [])
 
                 /* Dummy authentication for testing, uses $timeout to simulate api call
                  ----------------------------------------------*/
-                $timeout(function () {
-                    var response;
-                    UserService.GetByUsername(username)
-                        .then(function (user) {
-                            if (user !== null && user.password === password) {
-                                response = { success: true };
-                            } else {
-                                response = { success: false, message: 'Username or password is incorrect' };
-                            }
-                            callback(response);
-                        });
-                }, 1000);
+                //$timeout(function () {
+                //    var response;
+                //    UserService.GetByUsername(username)
+                //        .then(function (user) {
+                //            if (user !== null && user.password === password) {
+                //                response = { success: true };
+                //           } else {
+                //                response = { success: false, message: 'Username or password is incorrect' };
+                //            }
+                //            callback(response);
+                //        });
+                //}, 1000);
 
                 /* Use this for real authentication
                  ----------------------------------------------*/
-                //$http.post('/api/authenticate', { username: username, password: password })
-                //    .success(function (response) {
-                //        callback(response);
-                //    });
+                $http.post('http://localhost:8080/agentservice/agents/'+username+'/'+password)
+                   .success(function (response) {
+                        callback(response);
+                   });
 
             }
 
-            function SetCredentials(username, password) {
+            function SetCredentials(username, password, matricule) {
                 var authdata = Base64.encode(username + ':' + password);
 
                 $rootScope.globals = {
                     currentUser: {
+                        matricule: matricule,
                         username: username,
                         authdata: authdata
                     }
@@ -237,11 +238,10 @@ angular.module('myApp.login', [])
             })();
      
             function login() {
-                console.log('login');
                 vm.dataLoading = true;
                 AuthenticationService.Login(vm.username, vm.password, function (response) {
-                    if (response.success) {
-                        AuthenticationService.SetCredentials(vm.username, vm.password);
+                    if (response) {
+                        AuthenticationService.SetCredentials(vm.username, vm.password, response.matricule);
                         if (response.type === 'admin') {
                             $location.path('/');
                         } else {

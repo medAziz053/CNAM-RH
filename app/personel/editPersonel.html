@@ -8,18 +8,38 @@
 	<div class="EditPersonel-form">
 		<form>
 		  <div class="form-group">
-		    <label for="name">Nom & Prénom</label>
-		    <input type="text" class="form-control" id="name" ng-model="personel.name">
+		    <label for="nom">Nom</label>
+		    <input type="text" class="form-control" id="nom" ng-model="personel.nom">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="prenom">Prénom</label>
+		    <input type="text" class="form-control" id="prenom" ng-model="personel.prenom">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="adresse">Adresse</label>
+		    <input type="text" class="form-control" id="adresse" ng-model="personel.adresse">
 		  </div>
 
 		  <div class="form-group">
 		    <label for="matricule">Matricule</label>
-		    <input type="text" class="form-control" id="matricule" ng-model="personel.registrationNumber">
+		    <input type="text" class="form-control" id="matricule" ng-model="personel.matricule">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="situationFamiliale">Situation Familiale</label>
-		    <select class="form-control">
+		    <label for="datnais">Date Naissance</label>
+		    <input type="text" class="form-control" id="datnais" ng-model="personel.datnais">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="lieunais">Lieu Naissance</label>
+		    <input type="text" class="form-control" id="lieunais" ng-model="personel.lieunais">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="situation">Situation Familiale</label>
+		    <select class="form-control" ng-model="personel.situation">
 			  <option>Célibataire</option>
 			  <option>Marié(e)</option>
 			  <option>Divorcé(e)</option>
@@ -27,18 +47,36 @@
 		  </div>
 
 		  <div class="form-group">
-		    <label for="nombreEnfants">NB. Enfants</label>
-		    <input type="text" class="form-control" id="nombreEnfants" ng-model="personel.childenCount">
+		    <label for="nbr_enfants">NB. Enfants</label>
+		    <input type="text" class="form-control" id="nbr_enfants" ng-model="personel.nbr_enfants">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="grade">Grade</label>
-		    <input type="text" class="form-control" id="grade" ng-model="personel.grade">
+		    <label for="fonction">Grade</label>
+		    <input type="text" class="form-control" id="fonction" ng-model="personel.fonction">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="recruitementDate">Recruté(e) le</label>
-		    <input type="text" class="form-control" id="recruitementDate" ng-model="personel.recruitementDate">
+		    <label for="recrutement">Recruté(e) le</label>
+		    <input type="text" class="form-control" id="recrutement" ng-model="personel.recrutement">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="type">Type</label>
+		    <select class="form-control" ng-model="personel.type">
+			  <option>Administrateur</option>
+			  <option>Personel</option>
+			</select>
+		  </div>
+
+		  <div class="form-group">
+		    <label for="login">Login</label>
+		    <input type="text" class="form-control" id="login" ng-model="personel.login">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="password">Mot De Passe</label>
+		    <input type="password" class="form-control" id="password" ng-model="personel.password">
 		  </div>
 
 		  <div class="form-group">
