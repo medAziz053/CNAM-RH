@@ -56,7 +56,8 @@ angular.module('myApp', [
 
 	function NavbarController ($rootScope, $location) {
 		var ctrl = this;
-		ctrl.isAdmin = $rootScope.globals.currentUser.type === 'admin';
+		ctrl.currentUser = $rootScope.globals.currentUser || null; 
+		ctrl.isAdmin = $rootScope.globals && $rootScope.globals.currentUser $$$rootScope.globals.currentUser.type === 'admin';
 		ctrl.logout = () => {
 			$location.path('/login');
 		}
