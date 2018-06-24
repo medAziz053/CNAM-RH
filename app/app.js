@@ -40,10 +40,23 @@ angular.module('myApp', [
 
 	    $rootScope.$on('$locationChangeStart', function (event, next, current) {
 	        // redirect to login page if not logged in and trying to access a restricted page
-	        /*var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+	        var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
 	        var loggedIn = $rootScope.globals.currentUser;
 	        if (restrictedPage && !loggedIn) {
 	            $location.path('/login');
-	        }*/
+	        }
 	    });
-	}]);
+	}]).
+
+	component('navbar', {
+		templateUrl: 'navbar/navbar.html',
+		controller: NavbarController
+	});
+
+	function NavbarController ($rootScope, $location) {
+		var ctrl = this;
+		ctrl.isAdmin = $rootScope.globals.currentUser.type === 'admin';
+		ctrl.logout = () => {
+			$location.path('/login');
+		}
+	}

@@ -29,20 +29,21 @@ angular.module('myApp.login', [])
 
                 /* Use this for real authentication
                  ----------------------------------------------*/
-                $http.post('http://localhost:8080/agentservice/agents/'+username+'/'+password)
+                $http.get('http://localhost:8080/agentservice/agents/'+username+'/'+password)
                    .success(function (response) {
                         callback(response);
                    });
 
             }
 
-            function SetCredentials(username, password, matricule) {
+            function SetCredentials(username, password, matricule, type) {
                 var authdata = Base64.encode(username + ':' + password);
 
                 $rootScope.globals = {
                     currentUser: {
                         matricule: matricule,
                         username: username,
+                        type: admin,
                         authdata: authdata
                     }
                 };
@@ -241,7 +242,7 @@ angular.module('myApp.login', [])
                 vm.dataLoading = true;
                 AuthenticationService.Login(vm.username, vm.password, function (response) {
                     if (response) {
-                        AuthenticationService.SetCredentials(vm.username, vm.password, response.matricule);
+                        AuthenticationService.SetCredentials(vm.username, vm.password, response.matricule, response.type);
                         if (response.type === 'admin') {
                             $location.path('/');
                         } else {

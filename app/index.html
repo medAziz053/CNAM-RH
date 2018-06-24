@@ -16,34 +16,7 @@
   </head>
   <body>
     <div class="AppContainer">
-      <nav id="AppNavbar" class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
-              <li><a href="#!/avances">AVANCES SUR SALAIRE <span class="sr-only">(current)</span></a></li>
-              <li><a href="#!/amortissement">TABLEAU AMORTISSEMENT <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">REMBOURSEMENTS <span class="sr-only">(current)</span></a></li>
-              <li><a href="#!/pilotage">PILOTAGE <span class="sr-only">(current)</span></a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li id="logoutButton">
-                <button type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-log-out"></span> Log out
-                </button>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">français <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a>français</a></li>
-                  <li><a>anglais</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
+      <navbar></navbar>
       <div class="View" ng-view></div>
     </div>
 
@@ -69,9 +42,6 @@
     <!--chart.js-->
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
-
-    <!--datepicker-->
-    <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
   </body>
 </html>
