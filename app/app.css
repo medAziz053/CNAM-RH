@@ -97,6 +97,10 @@ body {
 	color: rgb(255, 255, 255);
 }
 
+#logoutButton {
+	padding: 10px; 
+} 
+
 .Pilotage-labels {
 	padding: 15px 0;
 	float: none;
