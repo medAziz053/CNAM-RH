@@ -9,8 +9,8 @@ angular.module('myApp.pilotage', ['ngRoute', 'chart.js'])
   });
 }])
 
-.controller('PilotageCtrl', function($scope,$http) {
-	$scope.labels = ['2012', '2013', '2013', '2014','2015', '2016', '2017','2018'];
+.controller('PilotageCtrl', function($scope) {
+
   	$scope.series = [
   					'Demandes d\'avances sur salaire', 
   					'Demandes d\'avances sur salaire validées',
@@ -19,9 +19,10 @@ angular.module('myApp.pilotage', ['ngRoute', 'chart.js'])
 
 	$scope.colors = [ '#EAF1F5', '#F8F8F8', '#FDDADB'];
 
-	$http.get('http://localhost:8080/avanceservice/avances/pilotage')
+	$http.get('http://localost:8080/avanceservice/avances/pilotage')
 		.then(function(response) {
-			$scope.data = response.data;
+			$scope.data = [response.data.total_demandes, response.data.demandes_acceptees, response.data.demande_en_attente];
+			$scope.labels = response.data.labels;
 		});
 	//$scope.colors = [[234, 241, 245], [248, 248, 248], [253, 218, 219]];
 /*
