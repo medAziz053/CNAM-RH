@@ -50,6 +50,9 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 })
 .controller('AjoutAvanceCtrl', function($scope,$http,$location) {
 	$scope.demande = {};
+	if ($rootScope.globals.currentUser.type !=== 'admin' && $rootScope.globals.currentUser.matricule) {
+		$scope.demande.matricule = $rootScope.globals.currentUser.matricule;
+	}
 	$scope.demande.etat = "en attente";
 	$scope.cancel = () => {
 		$location.path('/avances');
