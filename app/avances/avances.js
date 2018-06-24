@@ -19,13 +19,14 @@ angular.module('myApp.avances', ['ngRoute'])
 			$scope.avances = response.data;
 		});
 })
-.controller('AjoutAvanceCtrl', function($scope) {
-	$scope.avance = {};
+.controller('AjoutAvanceCtrl', function($scope,$http,$location) {
+	$scope.demande = {};
+	$scope.demande.etat = "en attente";
 	$scope.cancel = () => {
 		$location.path('/avances');
 	}
 	$scope.save = () => {
-		$http.post('http://localhost:8080/avancesservice/avances/create' $scope.avance).
+		$http.post('http://localhost:8080/avanceservice/avances/create', $scope.demande).
         then(function(response) {
 			$location.path('/avances');
         });

@@ -19,27 +19,27 @@
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col">Nom & Prénom</th>
-          <th scope="col">Date & Lieu de naissance</th>
           <th scope="col">Matricule</th>
-          <th scope="col">Situation Familiale</th>
-          <th scope="col">Grade</th>
-          <th scope="col">Recruté(e) le</th>
-          <th scope="col">Nbr Enfant</th>
-          <th scope="col">Position</th>
+          <th scope="col">Année</th>
+          <th scope="col">Montant Demandé</th>
+          <th scope="col">Montant Accordé</th>
+          <th scope="col">Interet</th>
+          <th scope="col">Montant Mensuel</th>
+          <th scope="col">Objet</th>
+          <th scope="col">Etat</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="av in avances" ng-class="{'danger': av.status === 'refused', 'success': av.status === 'accepted', 'info': av.status === 'in progress' }">
+        <tr ng-repeat="av in avances" ng-class="{'danger': av.etat === 'refusée', 'success': av.etat === 'acceptée', 'info': av.etat === 'en attente' }">
           <th scope="row">{{ $index + 1 }}</th>
-          <td>{{av.name}}</td>
-          <td>{{av.birth}}</td>
-          <td>{{av.registrationNumber}}</td>
-          <td>{{av.familySituation}}</td>
-          <td>{{av.grade}}</td>
-          <td>{{av.recruitementDate}}</td>
-          <td>{{av.childenCount}}</td>
-          <td>{{av.position}}</td>
+          <td>{{av.matricule}}</td>
+          <td>{{av.annee}}</td>
+          <td>{{av.mnt_demande}}</td>
+          <td>{{av.mnt_accorde}}</td>
+          <td>{{av.interet}}</td>
+          <td>{{av.mnt_mensuel}}</td>
+          <td>{{av.objet}}</td>
+          <td>{{av.etat}}</td>
         </tr>
       </tbody>
     </table>  
