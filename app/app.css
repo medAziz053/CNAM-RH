@@ -55,6 +55,7 @@
 	padding: 0 10px;
 	margin: 0 20px;
 	background-color: rgb(255, 255, 255);
+	border-radius: 15px;
 }
 
 .Personel-title {
@@ -136,4 +137,17 @@ body {
 
 .AjoutAvance-title, .AjoutAvance-form, .EditPersonel-title, .EditPersonel-form {
 	padding: 10px 500px 10px 30px;
+}
+
+.Profile-Container {
+	padding: 10px 20px;
+	width: 600px;
+	margin: auto;
+	border: 1px solid black;
+	border-radius: 15px;
+	height: 100%;
+}
+
+.Profile-Container h1 {
+	text-align: center;
 }

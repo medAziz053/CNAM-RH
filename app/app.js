@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'ngCookies',
   'myApp.login',
+  'myApp.profile',
   'myApp.personel',
   'myApp.avances',
   'myApp.pilotage',
