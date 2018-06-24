@@ -27,10 +27,6 @@ angular.module('myApp.personel', ['ngRoute', 'ui.router'])
         });
 
 	$scope.addPersonel = () => {
-		$http.post('http://localhost:8080/agentservice/agents/create',).
-        then(function(response) {
-        	$state.reload();
-        });
 		$location.path('/personel/add');
 	}
 
@@ -81,7 +77,7 @@ angular.module('myApp.personel', ['ngRoute', 'ui.router'])
 	$scope.save = () => {
 		$http.post('http://localhost:8080/agentservice/agents/create', $scope.personel).
         then(function(response) {
-			$location.path('/personel');
+          $location.path('/personel');
         });
 	}	
 });

@@ -6,92 +6,49 @@
 <div class="row">
 	<div class="AjoutAvance-form">
 		<form>
+
 		  <div class="form-group">
-		    <label for="name">Nom & Prénom</label>
-		    <input type="text" class="form-control" id="name">
+		    <label for="matricule">Matricule:</label>
+		    <input type="text" class="form-control" id="matricule" ng-model="demande.matricule">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="matricule">Matricule</label>
-		    <input type="text" class="form-control" id="matricule">
+		    <label for="annee">Année:</label>
+		    <input type="text" class="form-control" id="annee" ng-model="demande.annee">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="situationFamiliale">Situation Familiale</label>
-		    <select class="form-control">
-			  <option>Célibataire</option>
-			  <option>Marié(e)</option>
-			  <option>Divorcé(e)</option>
-			</select>
+		    <label for="mnt_demande">Montant demande:</label>
+		    <input type="text" class="form-control" id="mnt_demande" ng-model="demande.mnt_demande">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="nombreEnfants">NB. Enfants</label>
-		    <input type="text" class="form-control" id="nombreEnfants">
+		    <label for="mnt_accorde">Montant accordé:</label>
+		    <input type="text" class="form-control" id="mnt_accorde" ng-model="demande.mnt_accorde">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="grade">Grade</label>
-		    <input type="text" class="form-control" id="grade">
+		    <label for="interet">Interet:</label>
+		    <input type="text" class="form-control" id="interet" ng-model="demande.interet">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="recruitementDate">Recruté(e) le</label>
-		    <input type="text" class="form-control" id="recruitementDate">
+		    <label for="mnt_mensuel">Montant mensuel:</label>
+		    <input type="text" class="form-control" id="mnt_mensuel" ng-model="demande.mnt_mensuel">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="position">Position</label>
-		    <input type="text" class="form-control" id="position">
+		    <label for="objet">Objet:</label>
+		    <input type="text" class="form-control" id="objet" ng-model="demande.objet">
 		  </div>
 
 		  <div class="form-group">
-		    <label for="montant">Montant demandé</label>
-		    <input type="text" class="form-control" id="montant">
+		    <label for="etat">Etat:</label>
+		    <input type="text" class="form-control" id="etat" ng-model="demande.etat">
 		  </div>
 
-		  <div class="form-group">
-		    <label for="interet">Intéret</label>
-		    <input type="text" class="form-control" id="interet">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="nbSalaires">Nombre de salaires</label>
-		    <input type="text" class="form-control" id="nbSalaires">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="montantTotal">Montant total</label>
-		    <input type="text" class="form-control" id="montantTotal">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="reliquat">Reliquat</label>
-		    <input type="text" class="form-control" id="reliquat">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="montantAServir">Montant à servir</label>
-		    <input type="text" class="form-control" id="montantAServir">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="montantDeRemboursement">Modalité de remboursement</label>
-		    <input type="text" class="form-control" id="montantDeRemboursement">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="objet">Objet</label>
-		    <input type="text" class="form-control" id="objet">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="dateDernierAvance">Date dernier Avance</label>
-		    <input type="text" class="form-control" id="dateDernierAvance">
-		  </div>
-
-		  <button type="submit" class="btn btn-dangert">Annuler</button>
-		  <button type="submit" class="btn btn-success">Créer</button>
+		  <button type="submit" class="btn btn-dangert" ng-click="cancel()">Annuler</button>
+		  <button type="submit" class="btn btn-success" ng-click="save()">Créer</button>
 		</form>
 	</div>
 </div>
