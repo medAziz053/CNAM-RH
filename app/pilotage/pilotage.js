@@ -2,11 +2,12 @@
 
 angular.module('myApp.pilotage', ['ngRoute', 'chart.js'])
 
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', function($routeProvider, ChartJsProvider) {
   $routeProvider.when('/pilotage', {
     templateUrl: 'pilotage/pilotage.html',
     controller: 'PilotageCtrl'
   });
+  //ChartJsProvider.setOptions({ colors : [ '#EAF1F5', '#F8F8F8', '#FDDADB']});
 }])
 
 .controller('PilotageCtrl', function($scope) {
@@ -16,7 +17,9 @@ angular.module('myApp.pilotage', ['ngRoute', 'chart.js'])
   					'Demandes d\'avances sur salaire validées',
 					'Demandes d\'avances sur salaire en attente'
 					];
-	$scope.colors = ['Blue', 'Green', 'Red'];
+
+	$scope.colors = [ '#EAF1F5', '#F8F8F8', '#FDDADB'];
+	//$scope.colors = [[234, 241, 245], [248, 248, 248], [253, 218, 219]];
 /*
 	[serie1 of year 1, serie 1 of year2, .....]
 */
