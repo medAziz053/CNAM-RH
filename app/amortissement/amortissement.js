@@ -12,8 +12,8 @@ angular.module('myApp.amortissement', ['ngRoute'])
 .controller('AmortissementCtrl', function($scope, $http) {
 	var months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 	$scope.chercher = () => {
-		var date1 = ($scope.echeance)? $scope.echeance.split('-')[0] : null;
-		var date2 = ($scope.echeance)? $scope.echeance.split('-')[1] : null;
+		var date1 = ($scope.echeance) ? $scope.echeance.split('-')[0] : null;
+		var date2 = ($scope.echeance) ? $scope.echeance.split('-')[1] : null;
 		var montant = $scope.montant || -1;
 		var matricule = $scope.matricule || null;
 
