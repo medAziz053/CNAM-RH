@@ -33,6 +33,7 @@ angular.module('myApp.personel', ['ngRoute', 'ui.router'])
 	$scope.removePersonel = function(id) {
 		$http.delete('http://localhost:8080/agentservice/agents/delete/'+ id).
         then(function(response) {
+			$location.path('/personel');
         	$state.reload();
         });
 	}
@@ -57,16 +58,18 @@ angular.module('myApp.personel', ['ngRoute', 'ui.router'])
             }
         };
 }])
-.controller('editPersonelController', function($scope, $rootScope, $location, $http) {
+.controller('editPersonelController', function($scope, $rootScope, $location, $http,$state) {
 	$scope.personel = $rootScope.personelToEdit;
 	$rootScope.personelToEdit = null;
 	$scope.cancel = function () {
 		$location.path('/personel');
+		$state.reload();
 	}
 	$scope.save = () => {
 		$http.post('http://localhost:8080/agentservice/agents/create', $scope.personel).
         then(function(response) {
 			$location.path('/personel');
+			$state.reload();
         });
 	}
 })
