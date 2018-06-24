@@ -19,12 +19,10 @@ angular.module('myApp.amortissement', ['ngRoute'])
 
 		var data = {matricule, date1, date2, montant};
 
-		$http.post('http://localhost:8080/amortissementservice/amortissements/filtrage', {
-
-		}).then(function(response) {
+		$http.post('http://localhost:8080/amortissementservice/amortissements/filtrage', data).then(function(response) {
         	$scope.amortissements = response.data;
         	$scope.amortissements.forEach((am) => {
-        		am.moisString = months[am.mois + 1];
+        		am.moisString = months[am.mois - 1];
         	});
         });
 		var result = null;
