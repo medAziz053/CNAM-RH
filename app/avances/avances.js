@@ -14,14 +14,24 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 }])
 
 .controller('AvancesCtrl', function($scope, $rootScope, $http, $state) {
-	$http.get('http://localhost:8080/avanceservice/avances').
-		then(function(response) {
-			$scope.avances = response.data;
-		});
-
+	
 	$scope.isAdmin = $rootScope.globals 
 					&& $rootScope.globals.currentUser 
 					&& $rootScope.globals.currentUser.type === "admin";
+	$scope.personelMatricule = ($scope.isAdmin) ? null : $rootScope.globals.currentUser.matricule; 
+
+	$http.get('http://localhost:8080/avanceservice/avances').
+		then(function(response) {
+			$scope.avances = response.data;
+			if(personelMatricule) {
+				const reducer = (accumulator, currentValue) => {
+					if (currentValue.matricule === personelMatricule) {
+						accumulator.concat(currentValue);
+					}
+				}
+				$scope.avances = $scope.avances.reduce(reducer, []);
+			}
+		});
 
 	$scope.accepter = (id) => {
 		$http.post('http://localhost:8080/avanceservice/avances', {'id': id, 'state': 'acceptée'}).
