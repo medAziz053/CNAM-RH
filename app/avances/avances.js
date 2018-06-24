@@ -23,9 +23,9 @@ angular.module('myApp.avances', ['ngRoute', 'ui.router'])
 	$http.get('http://localhost:8080/avanceservice/avances').
 		then(function(response) {
 			$scope.avances = response.data;
-			if(personelMatricule) {
+			if($scope.personelMatricule) {
 				const reducer = (accumulator, currentValue) => {
-					if (currentValue.matricule === personelMatricule) {
+					if (currentValue.matricule === $scope.personelMatricule) {
 						accumulator.concat(currentValue);
 					}
 				}
