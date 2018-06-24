@@ -7,6 +7,7 @@
     "license": "MIT",
     "devDependencies": {
         "bower": "^1.8.4",
+        "copy-node-modules": "^1.0.6",
         "http-server": "^0.9.0",
         "jasmine-core": "^2.4.1",
         "karma": "^0.13.22",
@@ -20,7 +21,7 @@
         "postinstall": "bower install",
         "update-deps": "npm update",
         "postupdate-deps": "bower update",
-        "prestart": "npm install",
+        "prestart": "npm install && copy-node-modules ./ ./app",
         "start": "http-server -a localhost -p 8000 -c-1 ./app",
         "pretest": "npm install",
         "test": "karma start karma.conf.js",
