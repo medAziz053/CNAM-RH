@@ -9,7 +9,7 @@
   <div class=".col-md-4 pull-right">
     <div class="Avances-search">
       <span>Search</span>
-      <input type="text" name="" placeholder="Search">
+      <input type="text" name="" placeholder="Search" ng-model="querry">
     </div>
   </div>
 </div>
@@ -31,7 +31,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="av in avances" ng-class="{'danger': av.etat === 'refusée', 'success': av.etat === 'acceptée', 'info': av.etat === 'en attente' }">
+        <tr ng-repeat="av in avances | filter:{matricule:querry}" ng-class="{'danger': av.etat === 'refusée', 'success': av.etat === 'acceptée', 'info': av.etat === 'en attente' }">
           <th scope="row">{{ $index + 1 }}</th>
           <td>{{av.matricule}}</td>
           <td>{{av.annee}}</td>
