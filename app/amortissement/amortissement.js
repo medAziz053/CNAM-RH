@@ -9,55 +9,19 @@ angular.module('myApp.amortissement', ['ngRoute'])
   });
 }])
 
-.controller('AmortissementCtrl', function($scope) {
+.controller('AmortissementCtrl', function($scope, $http) {
+	var months = ['', '', '', '', '', '', '', '', '', '', '', '', '', '',];
 	$scope.chercher = () => {
 		var date1 = $scope.echeance.split('-')[0];
 		var date2 = $scope.echeance.split('-')[1];
 		var result = null;
 	}
 
-	$scope.amortissements = [{
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif',
-			      		'status': 'in progress'
-			      	  },
-			      	  {
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif',
-			      		'status': 'accepted'
-			      	  },
-			      	  {
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif',
-			      		'status': 'refused'
-			      	  },
-			      	  {
-						'name': 'Bouhammi Sami',
-			     		'birth': '29/01/1990',
-			      		'registrationNumber':201250,
-			      		'familySituation': 'célibataire',
-			      		'grade': 'Administrateur principale 1er degré',
-			      		'recruitementDate': '06/12/2015',
-			      		'childenCount': 10,
-			      		'position': 'Actif',
-			      		'status': 'in progress'
-			      	  }];
+	$scope.amortissements = {};
+
+	function getAmortissements () {
+		$http.get('http://localhost:8080/amortissementservice/amortissements').then(function(response) {
+        	$scope.amortissements = response;
+        });
+	}
 });
