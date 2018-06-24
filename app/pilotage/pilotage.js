@@ -9,7 +9,7 @@ angular.module('myApp.pilotage', ['ngRoute', 'chart.js'])
   });
 }])
 
-.controller('PilotageCtrl', function($scope) {
+.controller('PilotageCtrl', function($scope, $http) {
 
   	$scope.series = [
   					'Demandes d\'avances sur salaire', 
